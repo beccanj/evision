@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+    <title>About</title>
+{% endblock %}
+{% block content %}
+	<!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-end">
+                <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid rounded" data-wow-delay="0.1s" src="{% static 'img/about-ev.jpg' %}">
+                </div>
+                <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="display-1 text-primary mb-0">25</h1>
+                    <p class="text-primary mb-4">Years of Experience</p>
+                    <h1 class="display-5 mb-4">Shaping the future of e-mobility.</h1>
+                    <p class="mb-4">Our mission is
+                        to bridge the gap between e-mobility technology and its adoption in East Africa by providing a
+                        platform that connects EV users with essential resources like charging stations and informative
+                        blogs.
+                    </p>
+                    <a class="btn btn-primary py-3 px-4" href="">Explore More</a>
+                </div>
+                <div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-5">
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="border-start ps-4">
+                                <i class="fa fa-map-marker fa-3x text-primary mb-3"></i>
+                                <h4 class="mb-3">Interactive Map</h4>
+                                <span>Easily find charging stations near you with accurate coordinates and station
+                                    details.</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="border-start ps-4">
+                                <i class="fa fa-users fa-3x text-primary mb-3"></i>
+                                <h4 class="mb-3">E-Mobility Insights</h4>
+                                <span>Learn about the benefits of EVs and the future of sustainable
+                                    transportation.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    
+    
+{% endblock %}

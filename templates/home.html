@@ -1,0 +1,203 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+{% block content %}
+    <!-- Hero Start -->
+    <div class="container-xxl py-5 ">
+        <div class="container">
+            <div class="row g-5 align-items-center justify-content-around">
+                <div class="col-lg-5 order-lg-last hero-img mx-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <img src="{% static 'img/ElectricCarCharger.jpg' %}" class="img-fluid animated d-none d-md-block" alt="">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fs-5 fw-bold text-primary">Welcome to E<span style="color: black;">Vision</span>.</p>
+                    <h1 class="display-5 mb-4">Charge Smarter, Drive Greener with EVision</h1>
+                    <p class="mb-4">EVision is your go-to platform for seamless e-mobility. Find the nearest EV charging
+                        stations and stay updated on the latest in electric vehicle
+                        technology. With E<span style="color: black;">Vision</span>, we’re making the future of
+                        transportation accessible, sustainable, and
+                        convenient.</p>
+                    <a class="btn btn-primary py-3 px-4" href="{% url 'explore' %}">Explore EV Stations</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    
+    
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-bold text-primary">Our Services</p>
+                <h1 class="display-5 mb-5"> We offer </h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="img/service-1.jpg" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/map.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Interactive Maps</h4>
+                            <p class="mb-4">Explore Various Electric Vehicle Charging Stations Across Kenya and check
+                                out their features!</p>
+                            <a class="btn btn-sm"  href="{% url 'explore' %}"><i class="fa fa-plus text-primary me-2"></i>Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="img/service-1.jpg" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/route.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Route Planning</h4>
+                            <p class="mb-4">Find your nearest Electric Vehicle Charging Station with our route
+                                planner!</p>
+                            <a class="btn btn-sm " onclick="getLocation()" href="{% url 'routeplanner' %}"><i class="fa fa-plus text-primary me-2"></i>Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="img/service-1.jpg" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/blogging.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Blogs</h4>
+                            <p class="mb-4">Get informed on the latest trends in Electric Vehicles with our informative
+                                blogs!</p>
+                            <a class="btn btn-sm" href="{% url 'blogs' %}"><i class="fa fa-plus text-primary me-2"></i>Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+{#    <!-- About Start -->#}
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-end">
+                <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid rounded d-none d-md-block" data-wow-delay="0.1s" src="{% static 'img/about-ev.jpg' %}">
+                </div>
+                <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="display-1 text-primary mb-0">25</h1>
+                    <p class="text-primary mb-4">Years of Experience</p>
+                    <h1 class="display-5 mb-4">Shaping the future of e-mobility.</h1>
+                    <p class="mb-4">Our mission is
+                        to bridge the gap between e-mobility technology and its adoption in East Africa by providing a
+                        platform that connects EV users with essential resources like charging stations and informative
+                        blogs.
+                    </p>
+                    <a class="btn btn-primary py-3 px-4" href="">Watch Video</a>
+                </div>
+                <div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-5">
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="border-start ps-4">
+                                <i class="fa fa-map-marker fa-3x text-primary mb-3"></i>
+                                <h4 class="mb-3">Interactive Map</h4>
+                                <span>Easily find charging stations near you with accurate coordinates and station
+                                    details.</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="border-start ps-4">
+                                <i class="fa fa-users fa-3x text-primary mb-3"></i>
+                                <h4 class="mb-3">E-Mobility Insights</h4>
+                                <span>Learn about the benefits of EVs and the future of sustainable
+                                    transportation.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+{#    <!-- Facts Start -->#}
+    <div class="container-fluid facts my-5 py-5" data-parallax="scroll"
+         data-image-src="{% static 'img/eldo-rafael-iLrMw5v4afE-unsplash.jpg' %}">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">40</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Happy Clients</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">35</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Registered Stations</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">3</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Dedicated Staff</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                    <h1 class="display-4 text-white" data-toggle="counter-up">12</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Awards Achieved</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{#    <!-- Facts End -->#}
+
+    
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fs-5 fw-bold text-primary">Testimonial</p>
+                    <h1 class="display-5 mb-5">What Our Clients Say About Us!</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
+                        eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                    <a class="btn btn-primary py-3 px-4" href="">Watch Video</a>
+                </div>
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item">
+                            <img class="img-fluid rounded mb-3" src="img/testimonial-1.jpg" alt="">
+                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                            </p>
+                            <h4>Client Name</h4>
+                            <span>Profession</span>
+                        </div>
+                        <div class="testimonial-item">
+                            <img class="img-fluid rounded mb-3" src="img/testimonial-2.jpg" alt="">
+                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
+                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
+                            </p>
+                            <h4>Client Name</h4>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+{% endblock %}

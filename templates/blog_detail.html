@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+	<title>{{ post.title }} - EVision</title>
+{% endblock %}
+
+{% block content %}
+	<div class="container mt-5">
+        <h1 class="text-center">{{ post.title }}</h1>
+        <p class="text-muted text-center">{{ post.created_at }}</p>
+
+        {% if post.image %}
+            <img src="{{ post.image.url }}" class="img-fluid mb-4" alt="{{ post.title }}">
+        {% endif %}
+
+        <p>{{ post.content | safe }}</p>
+
+        <a href="{% url 'blogs' %}" class="btn btn-secondary mt-3">Back to Blogs</a>
+    </div>
+{% endblock %}

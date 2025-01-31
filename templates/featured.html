@@ -1,0 +1,173 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Featured</title>
+{% endblock %}
+
+{% block content %}
+    <!-- Services Start -->
+    <div class="container-xxl py-5 ">
+        <div class="container">
+            <!-- Row  -->
+            <div class="row justify-content-center ">
+                <div class="col-md-8 text-center">
+                    <h1 class="display-5 mb-4 animate__animated animate__pulse animate__infinite">Featured Stations</h1>
+                    <h6 class="subtitle font-weight-normal">Own an EV station? Feature it on EVision and connect with
+                        East Africa's growing e-mobility community!</h6>
+                </div>
+            </div>
+            <!-- Row  -->
+            <div class="row mt-4">
+                <!-- Column -->
+                <div class="col-md-4">
+                    <div class="card card-shadow border-0 mb-4">
+                        <img class="card-img-top" src="{% static 'img/feature-1.jpg' %}" alt="basigo">
+                        <div class="p-3">
+                            <h5 class="font-weight-medium mb-0">BasiGo Depot </h5>
+                            <h6 class="subtitle font-13">Embakasi</h6>
+                            <ul class="list-inline font-14 mt-3">
+                                <li class="py-1"><i class="fa fa-check"></i> DC 50 kW</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Open 24/7</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Coffee shops</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Car Wash</li>
+                            </ul>
+                            <div class="d-flex mt-3 align-items-center d-flex justify-content-between">
+                                <h2 class="price"><i class="fa fa-star"></i>4.5</h2>
+                                <div class="ml-auto">
+                                    <button class="btn btn-primary py-3 px-4 "
+                                            type="submit">View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <div class="col-md-4">
+                    <div class="card card-shadow border-0 mb-4">
+                        <img class="card-img-top" src="{% static 'img/feature-4.jpg' %}" alt="ampersand">
+                        <div class="p-3">
+                            <h5 class="font-weight-medium mb-0">Ampersand Swap</h5>
+                            <h6 class="subtitle font-13">Nairobi CBD</h6>
+                            <ul class="list-inline font-14 mt-3">
+                                <li class="py-1"><i class="fa fa-check"></i> DC 50 kW</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Open 24/7</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Coffee shops</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Car Wash</li>
+                            </ul>
+                            <div class="d-flex mt-3 align-items-center d-flex justify-content-between">
+                                <h2 class="price"><i class="fa fa-star"></i>4.5</h2>
+                                <div class="ml-auto">
+                                    <button class="btn btn-primary py-3 px-4 "
+                                            type="submit">View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <div class="col-md-4">
+                    <div class="card card-shadow border-0 mb-4">
+                        <img class="card-img-top" src="{% static 'img/feature-3.jpg' %}" alt="roam-hub">
+                        <div class="p-3">
+                            <h5 class="font-weight-medium mb-0">Roam Hub</h5>
+                            <h6 class="subtitle font-13">Lusaka</h6>
+                            <ul class="list-inline font-14 mt-3">
+                                <li class="py-1"><i class="fa fa-check"></i> DC 50 kW</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Open 24/7</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Coffee shops</li>
+                                <li class="py-1"><i class="fa fa-check"></i> Car Wash</li>
+                            </ul>
+                            <div class="d-flex mt-3 align-items-center d-flex justify-content-between">
+                                <h2 class="price"><i class="fa fa-star"></i>4.5</h2>
+                                <div class="ml-auto">
+                                    <button class="btn btn-primary py-3 px-4 "
+                                            type="submit">View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Quote Start -->
+    <div id="quote" class="container-fluid quote my-5 py-5" data-parallax="scroll"
+         data-image-src="{% static 'img/stephen-mease-5hbzWe6ens4-unsplash.jpg' %}">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="bg-white rounded p-4 p-sm-5 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="display-5 text-center mb-5">Get Featured</h1>
+                        <form method="post" name="submit-to-google-sheet">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="name" type="text" class="form-control bg-light border-0" id="gname"
+                                               placeholder="Your Name">
+                                        <label for="gname">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="email" type="email" class="form-control bg-light border-0"
+                                               id="gmail"
+                                               placeholder="Your Email">
+                                        <label for="gmail">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="sname" type="text" class="form-control bg-light border-0"
+                                               id="cname"
+                                               placeholder="Station Nmae">
+                                        <label for="cname">Station Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="slocation" type="text" class="form-control bg-light border-0"
+                                               id="cage"
+                                               placeholder="Lat/Long">
+                                        <label for="cage">Station Location</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    <textarea name="sdesc" class="form-control bg-light border-0"
+                                              placeholder="Leave your station description" id="message"
+                                              style="height: 100px"></textarea>
+                                        <label for="message">Station Description</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-primary py-3 px-4" type="submit">Submit Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwC3r1ZsIARozsypkpnXJSBEAiG37jGRXVikFrsP2vPn0EuKCfoWsxxeLvSBCCgDVtT/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {method: 'POST', body: new FormData(form)})
+        })
+    </script>
+{% endblock %}

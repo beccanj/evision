@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}
+	<title>Route Planner</title>
+{% endblock %}
+
+
+{% block extra_js %}
+	<script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        let lat = position.coords.latitude;
+                        let lon = position.coords.longitude;
+
+                        // Redirect to Django view with user's coordinates
+                        window.location.href = `/routeplanner?lat=${lat}&lon=${lon}`;
+                    },
+                    function (error) {
+                        alert("Location access denied. Please allow location services.");
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+	<div id="mapy" class="container py-5 my-5 wow fadeInUp">
+        <div class="row justify-content-center ">
+            <div class="col-md-8 text-center">
+                <h1 class="display-5 mb-4 ">Find the nearest EV Station</h1>
+                <h6 class="subtitle font-weight-normal mb-4">Plan your routes at ease with EVision </h6>
+            </div>
+        </div>
+        <div id="map">
+            <!-- Add Leaflet JS -->
+
+
+            {{ map|safe }}
+        </div>
+    </div>
+{% endblock %}

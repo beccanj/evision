@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Explore</title>
+{% endblock %}
+
+{% block content %}
+    <!-- MAP START -->
+    <!-- Map Section Start -->
+    <div id="mapy" class="container py-5 my-5 wow fadeInUp">
+        <div class="row justify-content-center ">
+            <div class="col-md-8 text-center">
+                <h1 class="display-5 mb-4 ">Explore EV Charging Stations</h1>
+                <h6 class="subtitle font-weight-normal mb-4">Discover a whole new world of e-mobility with EVision </h6>
+            </div>
+        </div>
+        <div id="map">
+            <!-- Add Leaflet JS -->
+
+
+            {{ map|safe }}
+        </div>
+    </div>
+    <!-- Map Section End -->
+    <!-- MAP END -->
+{% endblock %}
